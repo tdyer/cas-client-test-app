@@ -1,0 +1,9 @@
+  <!-- Show CAS variables -->			
+<a href="#" onclick="Element.toggle('cas_debug_info');return false">
+   CAS Session Name/Values</a> |
+<fieldset id="cas_debug_info" class="debug_info"
+          style="display:none">
+  <% cas_pairs = {} 
+     session.data.each{ |k, v| k.to_s =~ /^cas_/ && cas_pairs[k] = v } %>
+  <%= debug(cas_pairs) %>
+</fieldset>
